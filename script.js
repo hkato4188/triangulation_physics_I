@@ -1,4 +1,28 @@
 function main(){
+    if (typeof DeviceMotionEvent !== "undefined" && typeof DeviceMotionEvent.requestPermission === "function") {
+        // iOS 13+ requires permission
+        DeviceMotionEvent.requestPermission()
+        .then((response) => {
+            if (response === "granted") {
+            window.addEventListener("devicemotion", handleMotion);
+            } else {
+            alert("Permission denied for motion sensors.");
+            }
+        })
+        .catch(console.error);
+    } else {
+        // Non-iOS or older iOS
+        window.addEventListener("devicemotion", handleMotion);
+    }
+    
+
+function handleMotion(event) {
+  // Your logic to update angles and information
+  // Example:
+  document.getElementById("myLabel").textContent =
+    "Acceleration X: " + event.acceleration.x;
+}
+    
     window.addEventListener('deviceorientation', onOrientationChange)
 
     navigator.mediaDevices.getUserMedia({ video: {facingMode: 'environment'} })

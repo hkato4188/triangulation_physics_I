@@ -43,9 +43,9 @@ video{
     z-index: -1;
 }
 
-
 #startButton {
-  display: inline-block;
+  display: block;
+  margin: 32px auto;
   padding: 14px 32px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -56,12 +56,11 @@ video{
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
-  margin: 20px 0;
   outline: none;
 }
 
 #startButton:active {
-  background: linear-gradient(90deg, #357ae8 0%, #2bb3d3 100%);
+  background: linear-gradient(90deg, darkgreen 0%, lightgreen 100%);
   transform: scale(0.97);
 }
 

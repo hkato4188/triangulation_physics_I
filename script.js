@@ -19,8 +19,8 @@ function main(){
 function handleMotion(event) {
   // Your logic to update angles and information
   // Example:
-  document.getElementById("myLabel").textContent =
-    "Acceleration X: " + event.acceleration.x;
+  onOrientationChange(event);
+    
 }
     
     window.addEventListener('deviceorientation', onOrientationChange)
